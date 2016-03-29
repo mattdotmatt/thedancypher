@@ -9,13 +9,13 @@ func TestStep1(t *testing.T) {
 
 	Convey("Given I am encrypting a message using step 1", t, func() {
 
-		Convey("When the message is hello my name is dan", func() {
+		Convey("When the message is hEllO my Name iS dan", func() {
 
-			result := Step1("hello my name is dan")
+			result := Step1("hEllO my Name iS dan")
 
-			Convey("Then the result should be elloha ym mena is anda", func() {
+			Convey("Then the result should be EllOha ym meNa iS anda", func() {
 
-				So(result, ShouldEqual, "elloha ym mena is anda")
+				So(result, ShouldEqual, "EllOha ym meNa iS anda")
 
 			})
 		})

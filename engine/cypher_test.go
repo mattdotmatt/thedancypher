@@ -9,13 +9,13 @@ func TestCypher(t *testing.T) {
 
 	Convey("Given I am encrypting a message", t, func() {
 
-		Convey("When the message is hello", func() {
+		Convey("When the message is xyz", func() {
 
-			result := Encrypt("hello")
+			result := Encrypt("xyz")
 
-			Convey("Then the result should be xcxcxc", func() {
+			Convey("Then the result should be xyz", func() {
 
-				So(result, ShouldEqual, "")
+				So(string(result), ShouldEqual, "ҖҖΞ-")
 
 			})
 		})

@@ -6,7 +6,10 @@ import (
 	"unicode/utf8"
 )
 
-var crazyWeirdness [26]rune = [26]rune{'-', '|', '\\', '/', 'Д', 'Б', 'Є', 'Г', 'Я', '=', 'Ξ', 'Җ'}
+var crazyWeirdness [26]rune = [26]rune{
+	'-', '|', '\\', '/', 'Д', 'Б', 'Є', 'Г', 'Я', '=', 'Ξ', 'Җ', 'Җ',
+	'-', '|', '\\', '/', 'Д', 'Б', 'Є', 'Г', 'Я', '=', 'Ξ', 'Җ', 'Җ',
+}
 
 func Step3(message string) string {
 
@@ -27,9 +30,7 @@ func crazifyWord(word string) string {
 	var result []rune
 
 	for _, letter := range word {
-
 		crazyRune := crazifyRune(letter)
-
 		result = append(result, crazyRune)
 	}
 
