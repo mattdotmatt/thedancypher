@@ -6,15 +6,21 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
+	"github.com/mattdotmatt/thedancypher/engine"
 )
 
 func cypherHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Gorilla!\n"))
+	vars := mux.Vars(r)
+	text := vars["text"]
+
+	cyphered := engine.Encrypt(text)
+
+	w.Write([]byte(cyphered))
 }
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/cypher", cypherHandler)
+	r.HandleFunc("/cypher/{text}", cypherHandler)
 	http.Handle("/", r)
 
 	srv := &http.Server{
